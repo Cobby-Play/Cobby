@@ -52,6 +52,11 @@ Cobby - Github with Cobby는 깃 커밋내역을 통해 귀여운 캐릭터 Cobb
 
 - Frontend
   <br/>
+<img src="https://img.shields.io/badge/react-3178C6?style=plastic-square&logo=react&logoColor=#61DAFB"/>   
+<img src="https://img.shields.io/badge/redux-3178C6?style=plastic-square&logo=redux&logoColor=#764ABC"/>   
+<img src="https://img.shields.io/badge/nextdotjs-3178C6?style=plastic-square&logo=nextdotjs&logoColor=black"/>   
+<img src="https://img.shields.io/badge/nodedotjs-3178C6?style=plastic-square&logo=nodedotjs&logoColor=#339933"/>   
+<img src="https://img.shields.io/badge/typescript-3178C6?style=plastic-square&logo=TypeScript&logoColor=white"/>   
   React.js : v18.2.0
   Redux : v8.0.5
   Typescript : v5.0.4
