@@ -50,39 +50,35 @@ Cobby - Github with Cobby는 깃 커밋내역을 통해 귀여운 캐릭터 Cobb
 
 ![Architecture](Image/Achitecture.png)
 
-- Frontend
-  <br/>
-<img src="https://img.shields.io/badge/react-3178C6?style=plastic-square&logo=react&logoColor=#61DAFB"/>   
-<img src="https://img.shields.io/badge/redux-3178C6?style=plastic-square&logo=redux&logoColor=#764ABC"/>   
-<img src="https://img.shields.io/badge/nextdotjs-3178C6?style=plastic-square&logo=nextdotjs&logoColor=black"/>   
-<img src="https://img.shields.io/badge/nodedotjs-3178C6?style=plastic-square&logo=nodedotjs&logoColor=#339933"/>   
-<img src="https://img.shields.io/badge/typescript-3178C6?style=plastic-square&logo=TypeScript&logoColor=white"/>   
-  React.js : v18.2.0
-  Redux : v8.0.5
-  Typescript : v5.0.4
-  Next.js : v13.3.1
-  Node.js : v14.6.0 (Next Support)
-
-<br/><br/>
-
-- Backend
+## Frontend
+  ![title](https://img.shields.io/badge/-HTML5-E34F26?&logo=html5&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-CSS3-1572B6?&logo=CSS3&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-React-61DAFB?&logo=React&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-Redux-764ABC?&logo=redux&logoColor=white) <br/>
+  ![title](https://img.shields.io/badge/-Next.js-black?&logo=nextdotjs&logoColor=white) <br/>
+  ![title](https://img.shields.io/badge/-Node.js-339933?&logo=nodedotjs&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-Typescript-3178C6?&logo=typescript&logoColor=white)<br/>
 
 <br/>
-Spring Boot : v3.0.5
-Java :  v17
-Apache Kafka : v3.3.2
-Okhttp : v4.10.0
-Openfeign : v4.0.1
-<br/><br/>
 
-- Infra
+## Backend
+  ![title](https://img.shields.io/badge/-Java-gray?&logo=openjdk&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-SpringBoot-6DB33F?&logo=springboot&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-ApacheKafka-231F20?&logo=apachekafka&logoColor=white)<br/>
+
 
 <br/>
-Docker : v20.10.21
-Kubernetis : v1.24(or EKS with v1.25)
-Jenkins : v2.387.2
-Nginx : v1.24.0
-Ubuntu : v20.04 LTS
+
+## Infra
+  ![title](https://img.shields.io/badge/-Docker-2496ED?&logo=docker&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-Kubernetes-326CE5?&logo=kubernetes&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-Jenkins-D24939?&logo=jenkins&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-NGINX-009639?&logo=nginx&logoColor=white)<br/>
+  ![title](https://img.shields.io/badge/-Ubuntu-E95420?&logo=ubuntu&logoColor=white)<br/>
+
+
+<br/>
+
 
 # 👩‍👩‍👧개발 기간 및 팀원 역할 소개
 
