@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cobby-back-auth.fullname" . }}
+  labels:
+    {{- include "cobby-back-auth.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "cobby-back-auth.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "cobby-back-auth.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "cobby-back-auth.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: COBBY_AUTH_PASSWORD
+              value: "k8b201"
+            # - name: COBBY_AUTH_CLIENT_ID
+            #   value: "Iv1.38f5e106f8354b75"
+            # - name: COBBY_AUTH_CLIENT_SECRET
+            #   value: "d46c7eeaae7d40050439cd1efa5da074847d70b6"
+            # - name: COBBY_AUTH_JWT_SECRET
+            #   value: "TheCobby-With-Github-TheCobby-With-Github"
+            # - name: COBBY_AUTH_REDIRECT_URI
+            #   value: "https://cobby-play.com/login/oauth2/code/github"
+            # - name: COBBY_AUTH_USER_SERVER
+            #   value: "https://cobby-play.com/api/user/users"
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: "cobby-play-secret"
+              #     key: COBBY_PASSWORD      
+            # {{- with .Values.extraEnvs }}
+            # {{- toYaml . | nindent 12 }}
+            # {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /api/auth/health
+              port: http
+            initialDelaySeconds: 100
+            periodSeconds: 60
+          readinessProbe:
+            httpGet:
+              path: /api/auth/health
+              port: http
+            initialDelaySeconds: 100
+            periodSeconds: 60
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

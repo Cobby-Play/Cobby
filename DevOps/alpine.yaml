@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine
+  labels:
+    os/distro: alpine
+    os/version: 3.16.5
+spec:
+  containers:
+  - name: alpine
+    image: docker.io/library/alpine:3.16.5
+    env:
+      - name: COBBY_AUTH_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: "cobby-play-secret"
+            key: COBBY_PASSWORD
+    command:
+      - sleep
+      - "infinity"
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Always

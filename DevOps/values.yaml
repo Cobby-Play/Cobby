@@ -1,0 +1,73 @@
+## Subcharts
+cobby-front:
+  enabled: true
+
+cobby-back-main:
+  enabled: true
+
+cobby-back-auth:
+  enabled: true
+
+cobby-back-user:
+  enabled: true
+
+cobby-back-store:
+  enabled: true
+
+## Global
+fullnameOverride: "cobby-play"
+
+ingress:
+  awsCertArn: "arn:aws:acm:ap-northeast-2:031842929566:certificate/fbc25af3-32a3-46b8-9ce1-50963dfa81ff"
+  rules:
+    - http:
+        paths:
+          - path: /login
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-back-auth
+                port:
+                  number: 15010
+          - path: /oauth2
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-back-auth
+                port:
+                  number: 15010
+          - path: /api/main
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-back-main
+                port:
+                  number: 15030
+          - path: /api/auth
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-back-auth
+                port:
+                  number: 15010
+          - path: /api/user
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-back-user
+                port:
+                  number: 15020
+          - path: /api/store
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-back-store
+                port:
+                  number: 15040
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cobby-front
+                port:
+                  number: 3000
